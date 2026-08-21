@@ -1,0 +1,101 @@
+#include <iostream>
+using namespace std;
+class Employees
+{
+    private:
+        string name;
+        string language;
+        int age;
+        int yearsOfExperience;
+    public:
+        
+
+     Employees()
+    {
+      name = " ";
+      age = 0;
+      yearsOfExperience = 0;
+      language = " ";
+    }
+     Employees(string n,int a, int yoe,string L)
+    {
+        name = n;
+        age = a;
+        yearsOfExperience = yoe;
+        language = L;
+
+    }
+    void setname(string n)
+    {
+        name = n;
+    }
+    string getname()
+    {
+        return name;
+    }
+    void setage(int a)
+    {
+        age = a;
+    }
+    int getage()
+    {
+        return age;
+    }
+    void setyearsOfExperience(int yoe)
+    {
+        yearsOfExperience = yoe;
+    }
+    int getyearsOfExperience()
+    {
+        return yearsOfExperience;
+    }
+    void setlanguage(string L)
+    {
+        language = L;
+    }
+    string getlanguage()
+    {
+        return language;
+    }
+    void showDetails()
+    {
+        cout<<"Name: "<<name<<endl;
+        cout<<"Age: "<<age<<endl;
+        cout<<"Years of Experience: "<<yearsOfExperience<<endl;
+        cout<<"Language: "<<language<<endl;
+        
+    }
+    void Elegibleforpromotion()
+    {
+        if(yearsOfExperience>5)
+        {
+            cout<<"Hello "<<name<<" you are eligible for promotion and we will transfer your promotion application ahead"<<endl;
+        }
+        else
+        {
+            cout<<"Hello "<<name<<" your years of experience is not enough for a promotion right now , pls try after more years of experience"<<endl;
+        }
+    }
+};
+    int main()
+    {
+        int agein,yoein;
+        string namein,languagein;
+        Employees r1;
+        cout<<"Enter name of the employee: ";
+        getline(cin,namein);
+        r1.setname(namein);
+        cout<<"Enter age of the employee: ";
+        cin>>agein;
+        r1.setage(agein);
+        cout<<"Enter years of experience of the employee: ";
+        cin>>yoein;
+        r1.setyearsOfExperience(yoein);
+        cout<<"Enter programming language in which the employee works: ";
+        getline(cin>>ws,languagein);
+        r1.setlanguage(languagein);
+        r1.showDetails();
+        r1.Elegibleforpromotion();
+        cout<<"Thanks for reaching out to us, we will get back to you soon"<<endl;
+    }
+
